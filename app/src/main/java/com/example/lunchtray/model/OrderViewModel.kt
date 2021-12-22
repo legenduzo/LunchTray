@@ -140,7 +140,6 @@ class OrderViewModel : ViewModel() {
 //        val newSubTotal= _subtotal.value!!
 //        val calculatedTotal = newSubTotal * taxRate
 //        _total.value = calculatedTotal
-
     }
 
     /**
