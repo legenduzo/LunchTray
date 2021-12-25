@@ -57,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["cauliflower"].name}'
+                    android:onClick="@{() -> viewModel.setEntree(@string/cauliflower)}"
                     tools:text="Entree 1" />
 
                 <TextView
@@ -87,6 +88,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["chili"].name}'
+                    android:onClick="@{() -> viewModel.setEntree(@string/chili)}"
                     tools:text="Entree 2" />
 
                 <TextView
@@ -117,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["pasta"].name}'
+                    android:onClick="@{() -> viewModel.setEntree(@string/pasta)}"
                     tools:text="Entree 3" />
 
                 <TextView
@@ -147,6 +150,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["skillet"].name}'
+                    android:onClick="@{() -> viewModel.setEntree(@string/skillet)}"
                     tools:text="Entree 4" />
 
                 <TextView
@@ -177,6 +181,7 @@
             <!-- TODO: set the text to the current subtotal value from the view model -->
             <TextView
                 android:id="@+id/subtotal"
+                android:text="@{@string/subtotal(viewModel.subtotal)}"
                 style="@style/Widget.LunchTray.TextView.Subtotal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider"
@@ -185,6 +190,7 @@
             <!-- TODO: cancel the order when clicked -->
             <Button
                 android:id="@+id/cancel_button"
+                android:onClick="@{() -> entreeMenuFragment.cancelOrder()}"
                 style="@style/Widget.Order.Button.Cancel"
                 app:layout_constraintEnd_toStartOf="@id/next_button"
                 app:layout_constraintStart_toStartOf="parent"
@@ -193,6 +199,7 @@
             <!-- TODO: go to the next screen when clicked -->
             <Button
                 android:id="@+id/next_button"
+                android:onClick="@{() -> entreeMenuFragment.goToNextScreen()}"
                 style="@style/Widget.Order.Button.Next"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
